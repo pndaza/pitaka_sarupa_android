@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Tipitaka Sarūpa</string>
+    <string name="app_name_uni">ပိဋကသုံးပုံ သရုပ်စုံအဘိဓာန်</string>
+    <string name="title_home">Home</string>
+    <string name="title_bookmark">Bookmark</string>
+    <string name="title_recent">Recent</string>
+    <string name="title_setting">Setting</string>
+    <string name="title_info">Info</string>
+    <string name="title_copy">Copy</string>
+    <string name="title_addBookmark">Add Bookmark</string>
+    <string name="title_clearAll">Clear All Recent</string>
+    <string name="dev_name">Developed by PnDaza</string>
+    <string name="bookmark_mm">မှတ်စုစာရင်း</string>
+    <string name="bookmark_empty">သိမ်းဆည်းထားသည်များ\nမရှိပါ။</string>
+    <string name="recent_mm">လက်တလောကြည့်ရှုမှုစာရင်း</string>
+    <string name="recent_empty">လက်တလော ကြည့်ရှုထားသည်များ\nမရှိပါ။</string>
+    <string name="empty">nothing</string>
+    <string name="setting_mm">ပြင်ဆင်မွမ်းမံမှု</string>
+    <string name="info_mm">သိမှတ်ဖွယ်</string>
+    <string name="detail_mm">သရုပ်အဖွင့်</string>
+    <string name="msg_copy">ကော်ပီကူးယူပြီးပါပြီ!</string>
+    <string name="msg_bookmark_added">မှတ်စုစာရင်းထဲထည့်ပြီးပါပြီ!</string>
+    <string name="msg_bookmark_removed">မှတ်စုစာရင်းမှဖျက်လိုက်ပါပြီ!</string>
+
+</resources>

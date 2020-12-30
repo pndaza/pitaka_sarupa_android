@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'NotoSansMyanmar';
+	src: url('../font/NotoSansMyanmar-Regular.ttf');
+}
+
+body { font-family: 'NotoSansMyanmar' !important; line-height: 2.2em; background-color: black; color: white;}
+h3 {text-align: center;}
+p { text-align:left;  text-indent: 25pt;  font-size: 1.2em;}
+.dev-name {text-align: right; text-indent: 0pt; font-weight: bold; color: orange;}
