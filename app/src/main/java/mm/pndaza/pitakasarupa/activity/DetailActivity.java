@@ -9,10 +9,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.sdsmdg.tastytoast.TastyToast;
 
 import mm.pndaza.pitakasarupa.R;
 import mm.pndaza.pitakasarupa.database.DBOpenHelper;
@@ -81,7 +80,7 @@ public class DetailActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menu_copy:
                 copyToClipboard();
-                showToast(getString(R.string.msg_copy),TastyToast.SUCCESS);
+                showToast(getString(R.string.msg_copy));
 
                 return true;
             case R.id.menu_add_bookmark:
@@ -104,11 +103,11 @@ public class DetailActivity extends AppCompatActivity {
         if(checkBookmarkExist(word_id)){
             removeFromBookmark(word_id);
             item.setIcon(R.drawable.ic_add_bookmark);
-            showToast(getString(R.string.msg_bookmark_removed), TastyToast.INFO);
+            showToast(getString(R.string.msg_bookmark_removed));
         } else {
             addToBookmark(word_id);
             item.setIcon(R.drawable.ic_added_bookmark);
-            showToast(getString(R.string.msg_bookmark_added), TastyToast.SUCCESS);
+            showToast(getString(R.string.msg_bookmark_added));
         }
     }
 
@@ -143,9 +142,9 @@ public class DetailActivity extends AppCompatActivity {
         dbOpenHelper.addToRecent(word_id);
     }
 
-    private void showToast(String msg,int toastMode ){
-        TastyToast.makeText(getApplicationContext(),
-                MDetect.getDeviceEncodedText(msg), TastyToast.LENGTH_LONG, toastMode);
+    private void showToast(String msg){
+        Toast.makeText(getApplicationContext(),
+                MDetect.getDeviceEncodedText(msg), Toast.LENGTH_SHORT).show();
     }
 
 }

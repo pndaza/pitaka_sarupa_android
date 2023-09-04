@@ -9,14 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -143,16 +142,18 @@ public class BookmarkFragment extends Fragment {
 
                 if (deleteCount == 0) {
                     String msg = MDetect.getDeviceEncodedText("ဖျက်လိုသည်များကို အမှန်ခြစ် အရင်ပေးပါ။");
-                    TastyToast.makeText(getContext(),
-                            msg, TastyToast.LENGTH_LONG, TastyToast.ERROR);
+                    Toast.makeText(getContext(),
+                            msg, Toast.LENGTH_SHORT
+                    ).show();
+
                 } else {
                     Bookmark.isCheckboxShow = false;
                     adapter.notifyDataSetChanged();
 
                     String msg = MDetect.getDeviceEncodedText(
                             "သိမ်းဆည်းချက် (" + MyanNumber.toMyanmar(deleteCount) + ") ခုကို ဖျက်လိုက်ပါပြီ။");
-                    TastyToast.makeText(getContext(),
-                            msg, TastyToast.LENGTH_LONG, TastyToast.INFO);
+                    Toast.makeText(getContext(),
+                            msg, Toast.LENGTH_SHORT).show();
 
                     isAllMenuItemShowed = false;
                     item.setIcon(R.drawable.ic_edit);

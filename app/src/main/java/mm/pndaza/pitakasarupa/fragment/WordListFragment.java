@@ -9,14 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.ArrayList;
 
@@ -124,8 +123,9 @@ public class WordListFragment extends Fragment {
             wordListAdapter.setFilteredWordList(filteredList);
             wordListAdapter.setFilterText(filter);
             if(filteredList.size() == 0 ){
-                TastyToast.makeText(getContext(), MDetect.getDeviceEncodedText("ရှာမတွေ့ပါ!"),
-                        TastyToast.LENGTH_LONG, TastyToast.ERROR);
+                Toast.makeText(getContext(), MDetect.getDeviceEncodedText("ရှာမတွေ့ပါ!"),
+                        Toast.LENGTH_SHORT
+                ).show();
             }
         }
 

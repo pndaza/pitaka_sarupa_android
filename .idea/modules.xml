@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pitaka_sarupa.iml" filepath="$PROJECT_DIR$/.idea/modules/pitaka_sarupa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pitaka_sarupa_android.iml" filepath="$PROJECT_DIR$/.idea/modules/pitaka_sarupa_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa_android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa_android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa_android.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa_android.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa_android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa_android.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa_android.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pitaka_sarupa_android.app.unitTest.iml" />
     </modules>
   </component>
 </project>
