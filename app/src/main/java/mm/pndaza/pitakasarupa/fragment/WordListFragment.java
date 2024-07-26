@@ -4,12 +4,16 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Handler;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +39,10 @@ public class WordListFragment extends Fragment {
     private ArrayList<Word> filteredList;
     private WordListAdapter wordListAdapter;
     private OnWordlistSelectedListener callbackListener;
+
+    // Declare a Handler and a Runnable at the class level
+    private Handler handler = new Handler();
+    private Runnable runnable;
 
     @Nullable
     @Override
@@ -122,10 +130,10 @@ public class WordListFragment extends Fragment {
             }
             wordListAdapter.setFilteredWordList(filteredList);
             wordListAdapter.setFilterText(filter);
-            if(filteredList.size() == 0 ){
-                Toast.makeText(getContext(), MDetect.getDeviceEncodedText("ရှာမတွေ့ပါ!"),
-                        Toast.LENGTH_SHORT
-                ).show();
+            if(filteredList.isEmpty() ){
+                showToast("ရှာမတွေ့ပါ");
+            } else {
+                hideToast();
             }
         }
 
@@ -148,5 +156,40 @@ public class WordListFragment extends Fragment {
         } else {
             imageButton.setVisibility(View.VISIBLE);
         }
+    }
+
+    // Method to check and show toast
+    private void showToast(String message) {
+            // Remove any pending posts of the Runnable
+            handler.removeCallbacks(runnable);
+
+            // Define the Runnable to show the toast
+            runnable = new Runnable() {
+                @Override
+                public void run() {
+                    // Inflate the custom toast layout
+                    LayoutInflater inflater = getLayoutInflater();
+                    View layout = inflater.inflate(R.layout.custom_toast,
+                            (LinearLayout) getView().findViewById(R.id.custom_toast_container));
+
+                    // Set the text in the custom layout
+                    TextView text = layout.findViewById(R.id.toast_text);
+                    text.setText(MDetect.getDeviceEncodedText(message));
+
+                    // Create and show the toast
+                    Toast toast = new Toast(getContext());
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.setView(layout);
+                    // Set toast to appear at the center
+                    toast.setGravity(Gravity.TOP, 0, 350);
+                    toast.show();
+                }
+            };
+
+            handler.postDelayed(runnable, 1000);
+    }
+
+    private void hideToast() {
+        handler.removeCallbacks(runnable);
     }
 }
