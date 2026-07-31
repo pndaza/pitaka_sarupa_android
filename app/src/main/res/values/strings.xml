@@ -21,5 +21,13 @@
     <string name="msg_copy">ကော်ပီကူးယူပြီးပါပြီ!</string>
     <string name="msg_bookmark_added">မှတ်စုစာရင်းထဲထည့်ပြီးပါပြီ!</string>
     <string name="msg_bookmark_removed">မှတ်စုစာရင်းမှဖျက်လိုက်ပါပြီ!</string>
-
+    // setting
+    <string name="fontSize">စာလုံးအရွယ်အစား</string>
+    <string name="fontSizeSmall">အသေး</string>
+    <string name="fontSizeNormal">အလတ်</string>
+    <string name="fontSizeLarge">အကြီး</string>
+    <string name="fontSizeExtraLarge">အလွန်ကြီး</string>
+    <string name="themeTitle">အရောင်အသွင်အပြင်</string>
+    <string name="themeDay">နေ့ (နောက်ခံအဖြူ စာလုံးမဲ)</string>
+    <string name="themeNight">ည (နောက်ခံအမဲ စာလုံးဖြူ)</string>
 </resources>

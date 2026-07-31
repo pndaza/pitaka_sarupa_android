@@ -40,44 +40,31 @@ public class MainActivity extends AppCompatActivity
         }
 
         BottomNavigationView navView = findViewById(R.id.navigation);
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setOnItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+            int itemId = item.getItemId();
 
-    }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment;
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    selectedFragment = new WordListFragment();
-                    break;
-                case R.id.navigation_bookmark:
-                    selectedFragment = new BookmarkFragment();
-                    break;
-                case R.id.navigation_recent:
-                    selectedFragment = new RecentFragment();
-                    break;
-                case R.id.navigation_setting:
-                    selectedFragment = new SettingFragment();
-                    break;
-                case R.id.navigation_info:
-                    selectedFragment = new InfoFragment();
-                    break;
-                default:
-                    selectedFragment = new WordListFragment();
-                    break;
+            if (itemId == R.id.navigation_home) {
+                selectedFragment = new WordListFragment();
+            } else if (itemId == R.id.navigation_bookmark) {
+                selectedFragment = new BookmarkFragment();
+            } else if (itemId == R.id.navigation_recent) {
+                selectedFragment = new RecentFragment();
+            } else if (itemId == R.id.navigation_setting) {
+                selectedFragment = new SettingFragment();
+            } else if (itemId == R.id.navigation_info) {
+                selectedFragment = new InfoFragment();
+            } else {
+                selectedFragment = new WordListFragment(); // Default case
             }
+
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_layout, selectedFragment);
             fragmentTransaction.commit();
+            return true; // Indicate that the item selection was handled
+        });
 
-            return true;
-        }
-    };
-
+    }
 
     @Override
     public void onWordlistSelected(int word_id) {

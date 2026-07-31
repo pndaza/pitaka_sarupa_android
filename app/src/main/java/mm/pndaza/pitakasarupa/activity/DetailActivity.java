@@ -12,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 import mm.pndaza.pitakasarupa.R;
 import mm.pndaza.pitakasarupa.database.DBOpenHelper;
@@ -33,10 +36,8 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        setSupportActionBar(findViewById(R.id.toolbar));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         MDetect.init(this);
-        setTitle(MDetect.getDeviceEncodedText(getString(R.string.detail_mm)));
+        setUpToolBar(MDetect.getDeviceEncodedText(getString(R.string.detail_mm)));
 
         Intent intent = getIntent();
         int _id = intent.getIntExtra("_id", 0);
@@ -88,6 +89,16 @@ public class DetailActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void setUpToolBar(String title) {
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationIconTint(ResourcesCompat.getColor(getResources(), R.color.color_on_primary, null));
+        toolbar.setTitle(MDetect.getDeviceEncodedText(title));
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 

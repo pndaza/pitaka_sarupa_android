@@ -70,7 +70,7 @@ public class SettingFragment extends ListFragment {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         final String[] fontSizeNames = MDetect.isUnicode() ?
                 new String[] {"အသေး", "အလတ်" , "အကြီး"}: new String[]{"အေသး", "အလတ္" , "အႀကီး"};
-        final Integer[] fontSizeValues = {15, 18, 21};
+        final Integer[] fontSizeValues = {15, 19, 23};
         int current = Arrays.asList(fontSizeValues).
                 indexOf(SharePref.getInstance(context).getPrefFontSize());
         alertDialog.
